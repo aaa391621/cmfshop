@@ -1,14 +1,14 @@
 # cmfshop
-后台文件：cmfshop.zip
-<br>小程序文件：wei-cmf.zip
-<br>数据库: cmf_address.sql
+后台文件：cmfshop
+<br>小程序文件：wei-cmf
+<br>数据库: thinkcmfshop.sql
+<br>将域名指向cmfshop/public
 <br>访问后台：域名/admin,账号:admin,密码:123456
-<br>插件列表，小程序插件填写相关信息
+<br>后台插件列表，小程序插件填写相关信息
+<br>修改wei-cmf/utils/api.js里的host域名
+<br>支付配置在后台设置/微信设置
 <br>问题反馈：qq:29285674 邮箱：29285674@qq.com</font><br>
-<br>在wxpay表中加一个notify字段：https://cmfshop.com/api/Pay/notify 域名改成自己的<br>
-<br> 修改api\goods\controller\CartController中getWxpayInfo方法的
-<br> $open_id获取方式为$open_id = Db::name('third_party_user')->where('user_id', $order['uid'])->value('openid');</font><br>
-<br>本程序仅供学习和二次开发使用，教程本人正在录制中，后期会加上分销等功能，敬请期待
+<br>本程序仅供学习和二次开发使用，本项目停止更新，近期在做UNIAPP版本，敬请期待
 <br>
 <br>![image](http://wx4.sinaimg.cn/mw690/0060lm7Tly1fw3bb82rbdj30cc0kl0u6.jpg)
 <br>![image](http://wx1.sinaimg.cn/mw690/0060lm7Tly1fw3bc2c9tfj30bg0ju406.jpg)
