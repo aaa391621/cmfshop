@@ -10,6 +10,7 @@
 <br>问题反馈：qq:29285674 邮箱：29285674@qq.com</font><br>
 <br>本程序仅供学习和二次开发使用，本项目停止更新，近期在做UNIAPP版本，敬请期待
 <br> 伪静态配置：
+` ``
 location / {
     index  index.php index.html index.htm;
      #如果请求既不是一个文件，也不是一个目录，则执行一下重写规则
@@ -33,6 +34,7 @@ location /api/ {
         rewrite ^/api/(.*)$ /api/index.php?s=$1;
      }
 }
+` ``
 <br>
 <br>![image](http://wx4.sinaimg.cn/mw690/0060lm7Tly1fw3bb82rbdj30cc0kl0u6.jpg)
 <br>![image](http://wx1.sinaimg.cn/mw690/0060lm7Tly1fw3bc2c9tfj30bg0ju406.jpg)
