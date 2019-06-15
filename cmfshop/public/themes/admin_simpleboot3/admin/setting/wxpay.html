@@ -1,0 +1,60 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#A" data-toggle="tab">支付配置</a></li>
+    </ul>
+    <form class="form-horizontal js-ajax-form margin-top-20" role="form" action="{:url('setting/wxpayPost')}"
+          method="post">
+        <div class="tab-content">
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span
+                        class="form-required">*</span>小程序应用id</label>
+                <div class="col-md-6 col-sm-10">
+                    <input type="text" class="form-control" name="appid" value="{$wxpay.appid}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span
+                        class="form-required">*</span>小程序secret</label>
+                <div class="col-md-6 col-sm-10">
+                    <input type="text" class="form-control" name="secret" value="{$wxpay.secret}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span
+                        class="form-required">*</span>回调地址</label>
+                <div class="col-md-6 col-sm-10">
+                    <input type="text" class="form-control" name="notify" value="{$wxpay.notify}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span
+                        class="form-required">*</span>商户ID</label>
+                <div class="col-md-6 col-sm-10">
+                    <input type="text" class="form-control" name="mch_id" value="{$wxpay.mch_id}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span
+                        class="form-required">*</span>商户密钥</label>
+                <div class="col-md-6 col-sm-10">
+                    <input type="text" class="form-control" name="api_key" value="{$wxpay.api_key}">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary js-ajax-submit" data-refresh="0">
+                        {:lang('SAVE')}
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

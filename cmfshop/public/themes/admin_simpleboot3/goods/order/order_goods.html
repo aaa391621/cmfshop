@@ -1,0 +1,39 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <form class="js-ajax-form" action="" method="post">
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="50">商品ID</th>
+                <th>商品名称</th>
+                <th>缩略图</th>
+                <th width="">价格</th>
+                <th width="">数量</th>
+            </tr>
+            </thead>
+            <volist name="lists" id="vo">
+            <tr>
+                <td>{$vo.id}</td>
+                <td style="text-align:left">{$vo.post_title}</td>
+                <php>
+                    $more = json_decode($vo['more'], true);
+                    if (!empty($more['thumbnail'])) {
+                    $more['thumbnail'] = cmf_get_image_url($more['thumbnail']);
+                    }
+                </php>
+                <td><img src="{$more['thumbnail']}" alt="{$vo.post_title}" width="36"></td>
+                <td>{$vo.post_price}</td>
+                <td>{$vo.num}</td>
+            </tr>
+            </volist>
+            <tfoot>
+
+        </table>
+        <ul class="pagination">{$page|default=''}</ul>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

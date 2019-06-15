@@ -1,0 +1,86 @@
+<include file="public@header"/>
+</head>
+<style>
+    li {list-style-type:none;}
+</style>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="javascript:;">所有地址</a></li>
+    </ul>
+    <form class="well form-inline margin-top-20" method="post" action="{:url('AdminOauth/collect')}">
+        商品名:
+        <input type="text" class="form-control" name="keyword" style="width: 200px;"
+               value="{$keyword|default=''}" placeholder="请输入商品名...">
+        <input type="submit" class="btn btn-primary" value="搜索"/>
+        <a class="btn btn-danger" href="{:url('AdminOauth/collect')}">清空</a>
+    </form>
+    <form class="js-ajax-form" action="" method="post">
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="50">ID</th>
+                <th>用户昵称</th>
+                <th width="">商品图片</th>
+                <th width="">商品名称</th>
+                <th width="">价格</th>
+            </tr>
+            </thead>
+            <foreach name="collect" item="vo">
+                <tr>
+                    <td><b>{$vo.id}</b></td>
+                    <td>{$vo.user_nickname}</td>
+                    <td><img src="{$vo.description}" alt="{$vo.title}" width="36"></td>
+                    <td>{$vo.title}</td>
+                    <td>{$vo.price}</td>
+                </tr>
+            </foreach>
+            <tfoot>
+
+        </table>
+        <ul class="pagination">{$page|default=''}</ul>
+    </form>
+</div>
+<script src="__STATIC__/js/layer.min.js"></script>
+
+<script src="__STATIC__/js/admin.js"></script>
+<script type="text/javascript">
+    function detail(obj){
+        var Id = obj.id;
+        openIframeLayer("{:url('Order/orderGoods')}?id=" + Id, '订单详情', {
+            area: ['900px', '500px'],
+            btn: ['确定', '取消']
+        });
+    }
+    function change(e){
+        var Id = e.id;
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url:"{:url('Order/changeOrderStatus')}",
+            data:{'id':Id},
+            success: function(obj){
+                if(obj.status == 200){
+                    layer.open({
+                        content: obj.msg,
+                        btn:['确定'],
+                        shade:0.1,
+                        icon:1,
+                        end:function(){
+                            $('#order_status_'+Id).html(obj.order_status);
+                        }
+                    });
+                }else{
+                    layer.open({
+                        content: obj.msg,
+                        btn:['确定'],
+                        shade:0.1,
+                        icon:2
+                    });
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

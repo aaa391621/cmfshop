@@ -1,0 +1,127 @@
+<include file="public@header"/>
+</head>
+<style>
+    li {list-style-type:none;}
+</style>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="javascript:;">所有订单</a></li>
+    </ul>
+    <form class="well form-inline margin-top-20" method="post" action="{:url('Order/index')}">
+        状态:
+        <select class="form-control" name="status" style="width: 140px;">
+            <option value=''>全部</option>
+            <option <?php if($status==1) echo("selected");?> value='1'>待付款</option>
+            <option <?php if($status==2) echo("selected");?> value='2'>已完成</option>
+            <option <?php if($status==3) echo("selected");?> value='3'>待发货</option>
+            <option <?php if($status==4) echo("selected");?> value='4'>待收货</option>
+            <option <?php if($status==5) echo("selected");?> value='5'>已取消</option>
+        </select> &nbsp;&nbsp;
+        时间:
+        <input type="text" class="form-control js-bootstrap-datetime" name="start_time"
+               value="{$start_time|default=''}"
+               style="width: 140px;" autocomplete="off">-
+        <input type="text" class="form-control js-bootstrap-datetime" name="end_time"
+               value="{$end_time|default=''}"
+               style="width: 140px;" autocomplete="off"> &nbsp; &nbsp;
+        订单号:
+        <input type="text" class="form-control" name="keyword" style="width: 200px;"
+               value="{$keyword|default=''}" placeholder="请输入订单号...">
+        <input type="submit" class="btn btn-primary" value="搜索"/>
+        <a class="btn btn-danger" href="{:url('Order/index')}">清空</a>
+    </form>
+    <form class="js-ajax-form" action="" method="post">
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="50">ID</th>
+                <th>订单号</th>
+                <th>支付订单</th>
+                <th width="">用户名</th>
+                <th width="">订单状态</th>
+                <th width="">收货人</th>
+                <th width="">地址</th>
+                <th width="">手机</th>
+                <th width="">订单总价</th>
+                <th width="">下单时间</th>
+                <th width="150">操作</th>
+            </tr>
+            </thead>
+            <foreach name="order" item="vo">
+                <tr>
+                    <td><b>{$vo.id}</b></td>
+                    <td>{$vo.order_sn}</td>
+                    <td>{$vo.order_sn_submit}</td>
+                    <td>{$vo.user_nickname}</td>
+                    <td id='order_status_{$vo.id}'>
+                        <switch name="vo.order_status">
+                            <case value="1"><text style="color: orange">待付款</text></case>
+                            <case value="2"><text style="color: green">已完成</text></case>
+                            <case value="3"><text style="color: orangered">待发货</text></case>
+                            <case value="4"><text style="color: blueviolet">待收货</text></case>
+                            <default /><text style="color: red">已取消</text>
+                        </switch>
+                    </td>
+                    <td>{$vo.consignee}</td>
+                    <td>{$vo.address}</td>
+                    <td>{$vo.mobile}</td>
+                    <td>{$vo.amount}</td>
+                    <td>
+                        {$vo.submit_time}
+                    </td>
+                    <td>
+                        <a id="{$vo.id}" href="javascript:"; onclick='detail(this)'>查看订单</a>
+                        <a id="{$vo.id}" href="javascript:;" onclick='change(this)'>修改状态</a>
+                     </td>
+                </tr>
+            </foreach>
+            <tfoot>
+
+        </table>
+        <ul class="pagination">{$page|default=''}</ul>
+    </form>
+</div>
+<script src="__STATIC__/js/layer.min.js"></script>
+
+<script src="__STATIC__/js/admin.js"></script>
+<script type="text/javascript">
+    function detail(obj){
+        var Id = obj.id;
+        openIframeLayer("{:url('Order/orderGoods')}?id=" + Id, '订单详情', {
+            area: ['900px', '500px'],
+            btn: ['确定', '取消']
+        });
+    }
+    function change(e){
+        var Id = e.id;
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url:"{:url('Order/changeOrderStatus')}",
+            data:{'id':Id},
+            success: function(obj){
+                if(obj.status == 200){
+                    layer.open({
+                        content: obj.msg,
+                        btn:['确定'],
+                        shade:0.1,
+                        icon:1,
+                        end:function(){
+                            $('#order_status_'+Id).html(obj.order_status);
+                        }
+                    });
+                }else{
+                    layer.open({
+                        content: obj.msg,
+                        btn:['确定'],
+                        shade:0.1,
+                        icon:2
+                    });
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>
