@@ -1,0 +1,19 @@
+<!--pages/category/category.wxml-->
+<view class='container'>
+  <!-- 分类 -->
+  <view class='sidebar'>
+    <text wx:for="{{categoryList}}" wx:key="{{item.id}}" data-index='{{index}}' class='{{highlight[index]}}' bindtap='getSubCategory' data-id='{{item.id}}'>{{item.name}}</text>
+  </view>
+
+  <!-- 商品列表 -->
+  <view class='main'>
+    <view class='gridview'>
+      <view class='main-goods'>
+        <view class='single-goods' wx:for="{{subCategoryList}}" wx:key="{{item.id}}">
+          <image class='avatar' src='{{item.more.thumbnail}}' mode='aspectFill' bindtap='showDetail' data-id="{{item.id}}"></image>
+          <text class='title'>{{item.post_title}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

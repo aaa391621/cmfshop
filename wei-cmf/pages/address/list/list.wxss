@@ -1,0 +1,83 @@
+/* pages/address/list/list.wxss */
+page {
+  background: #f8f8f8;
+}
+
+.item {
+  margin-bottom: 20rpx;
+  background: #fff;
+  padding: 10rpx 20rpx 10rpx 20rpx;
+}
+
+/*姓名与手机号码*/
+
+.item .header {
+  font-size: 30rpx;
+  color: #333;
+  line-height: 72rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.item .header text {
+  margin-right: 40rpx;
+}
+
+.item .summary {
+  color: #999;
+  font-size: 29rpx;
+  line-height: 50rpx;
+}
+
+.item .footer {
+  border-top: 1px solid #ccc;
+  font-size: 30rpx;
+  color: #999;
+  padding-left: 10rpx;
+  padding-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*设为默认地址*/
+
+.set-default {
+  display: flex;
+  align-items: center;
+}
+
+.set-default text {
+  font-size: 27rpx;
+  margin-left: 6rpx;
+}
+
+/*编辑与删除操作*/
+
+.item .footer .operation {
+  width: 280rpx;
+  display: flex;
+}
+
+
+.set-default image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+
+/*地址列表包装容器*/
+
+.address-list {
+  margin-bottom: 56px;
+}
+
+/*添加地址按钮*/
+
+.address-add {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+  background: #3aa0b7;
+}

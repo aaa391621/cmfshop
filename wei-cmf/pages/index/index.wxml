@@ -1,0 +1,87 @@
+<!-- 幻灯片 -->
+<swiper indicator-dots autoplay interval="5000" duration="1000">
+  <block wx:for="{{banner}}" wx:key="{{item.id}}">
+    <swiper-item>
+      <image bindtap='showDetail' data-goods-id="{{item.url}}" src="{{item.image}}" class="swiper-image" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 搜索框 -->
+<view class='view_search'>
+  <view class='view_searchbg'>
+    <input placeholder-style='#fff' bindinput='inputing' bindconfirm='searchGoods' class='input_search' placeholder='请输入您搜索的商品名称' z></input>
+  </view>
+</view>
+<!-- 快捷图标一 -->
+<view class='func-area'>
+  <view bindtap='showCategory'>
+    <image src='/images/icon_all.png' mode='aspectFill' class='orange'></image>
+    <text>全部分类</text>
+  </view>
+
+  <view bindtap='showCarts'>
+    <image src='/images/icon_carticon.png' mode='aspectFill' class='orange'></image>
+    <text>购物车</text>
+  </view>
+
+  <view bindtap='showMine'>
+    <image src='/images/icon_collect.png' mode='aspectFill' class='orange'></image>
+    <text>个人中心</text>
+  </view>
+
+  <view>
+    <navigator url="/pages/my/money/money">
+      <image src='/images/icon_shopping.png' mode='aspectFill' class='orange'></image>
+      <text>我的钱包</text>
+    </navigator>
+  </view>
+</view>
+<!-- 快捷图标二 -->
+<view class='func-area'>
+  <view>
+    <navigator url="/pages/order/list/list">
+      <image src='/images/icon_orders.png' mode='aspectFill' class='orange'></image>
+      <text>我的订单</text>
+    </navigator>
+  </view>
+  <view>
+    <navigator url="/pages/favorite/index">
+      <image src='/images/icon_ssc.png' mode='aspectFill' class='orange'></image>
+      <text>我的收藏</text>
+    </navigator>
+  </view>
+  <view>
+    <navigator url="/pages/address/list/list">
+      <image src='/images/icon_seller.png' mode='aspectFill' class='orange'></image>
+      <text>地址管理</text>
+    </navigator>
+  </view>
+  <view>
+    <navigator url="/pages/about/update">
+      <image src='/images/icon_membericon.png' mode='aspectFill' class='orange'></image>
+      <text>关于我们</text>
+    </navigator>
+  </view>
+</view>
+
+<!-- 新品推荐展示 -->
+<view class='container-class'>
+  <view class='container-goods'>
+    <view class='category_title'>
+      <view class='redline'></view>
+      <text class='caption'>新品推荐</text>
+    </view>
+
+    <view class='main-goods'>
+      <view class='single-goods' wx:for="{{goods}}" wx:key="{{item.id}}" bindtap='showDetail' data-goods-id="{{item.id}}">
+        <image class='avatar' src='{{item.more.thumbnail}}' mode='aspectFill'></image>
+        <text class='title'>{{item.post_title}}</text>
+        <view class='summary'>
+          <text class='price'>￥{{item.post_price}}元</text>
+          <text class='sale'>浏览{{item.post_hits}}次</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,48 @@
+<!--pages/order/submit/submit.wxml-->
+<view class='parent'>
+  <view class='view-address' bindtap='addressSelect'>
+    <view class='view-addressleft'>
+      <image src='/images/white_loc.png'></image>
+      <view class='view-addressleft-info'>
+        <text class='text-name'>收货人：{{address.consignee}}</text>
+        <text class='text-address'>收货地址：{{address.address}}</text>
+      </view>
+    </view>
+    <view class='view-addressright'>
+      <text class='text-mobile'>{{address.mobile}}</text>
+      <image src='/images/white_hint.png'></image>
+    </view> 
+  </view>
+
+  <view wx:for='{{cartList}}' wx:key='{{item.id}}' class='container carts-list'>
+    <view class='carts-item'>
+      <!-- 缩略图 -->
+      <view>
+        <image class='carts-image' src='{{item.image}}' mode='aspectFill'></image>
+      </view>
+
+      <!-- 商品标题 -->
+      <view class='carts-text'>
+        <text class='carts-title'>{{item.name}}</text>
+      </view>
+
+      <!-- 价格和数量 -->
+      <view class='carts-right'>
+        <text class='text-red'>￥{{item.price}}</text>
+        <text class='text-price'>x{{item.num}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='class-line'></view>
+
+  <view class='view-price'>
+    <view class='view-price1'>
+      <text class='text-price1'>应付总额：</text>
+      <text class='text-red'>￥{{amount}}元</text>
+    </view>
+  </view>
+
+  <text bindtap='submit' class='text-save'>提交订单</text>
+
+</view>

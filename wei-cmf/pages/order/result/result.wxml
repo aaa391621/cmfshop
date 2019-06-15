@@ -1,0 +1,19 @@
+<!--pages/order/result/result.wxml-->
+<view class='container result-container'>
+  <view class='result'>
+
+    <block wx:if='{{payResult == 1}}'>
+      <image src='/images/paysuccess.png'></image>
+      <view>订单支付成功</view>
+      <button class='operate' bindtap='showDetails'>查看订单详情</button>
+      <button class='operate' bindtap='continueView'>继续购物</button>
+    </block>
+    <block wx:else>
+      <image src='/images/payerror.png'></image>
+      <view>订单支付失败</view>
+      <button class='operate' bindtap='returnOrderList'>返回订单列表</button>
+      <button class='operate' bindtap='continueView'>继续购物</button>
+    </block>
+
+  </view>
+</view>

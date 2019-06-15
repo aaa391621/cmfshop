@@ -1,0 +1,250 @@
+/* pages/cart/cart.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.view-empty {
+  width: 750rpx;
+  height: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-empty image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.hint {
+  font-size: 32rpx;
+  color: #999;
+}
+
+.btn {
+  font-size: 29rpx;
+  color: #fff;
+  background: red;
+  margin-top: 100rpx;
+  border-radius: 9rpx;
+  padding: 20rpx 200rpx 20rpx 200rpx;
+}
+
+/*整体列表*/
+.carts-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20rpx;
+}
+
+/*每行单元格*/
+.carts-item-title {
+  display: flex;
+  flex-direction: row;
+  /*width属性解决标题文字太短而缩略图偏移*/
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  padding: 18rpx 0;
+  align-items: center;
+}
+
+.carts-item-title image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.carts-item-title text {
+  font-size: 30rpx;
+  color: #000;
+  margin-left: 14rpx;
+}
+
+/*每行单元格*/
+.carts-item {
+  display: flex;
+  flex-direction: row;
+  height: 200rpx;
+  /*width属性解决标题文字太短而缩略图偏移*/
+  width: 100%;
+  border-bottom: 2px solid #eee;
+  padding: 20rpx 0;
+  justify-content: space-between;
+}
+
+/*左部图片*/
+.carts-image {
+  width: 140rpx;
+  height: 160rpx;
+}
+
+/*右部描述*/
+.carts-text {
+  margin-left: 10rpx;
+  width: 370rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.carts-right {
+  height: 180rpx;
+  width: 120rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+/*右上部分标题*/
+.carts-title {
+  font-size: 27rpx;
+  color: #444;
+  line-height: 38rpx;
+  flex-shrink: 0;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.carts-key-name {
+  margin-top: 10rpx;
+  font-size: 27rpx;
+  color: #999;
+}
+
+/*右下部分价格与数量*/
+.carts-subtitle {
+  font-size: 25rpx;
+  color: darkgray;
+  padding: 0 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*价格*/
+.carts-price {
+  color: #f60;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+/*商品加减按钮*/
+/*stepper容器*/
+.stepper {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 80px;
+  height: 23px;
+  margin: 0 auto;
+}
+
+/*加号与减号*/
+.stepper text {
+  width: 19px;
+  line-height: 23px;
+  text-align: center;
+  float: left;
+}
+
+/*数值*/
+.stepper input {
+  color: black;
+  float: left;
+  margin: 0 auto;
+  width: 40px;
+  height: 23px;
+  text-align: center;
+  font-size: 12px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+/*普通样式*/
+.stepper .normal {
+  color: black;
+}
+
+/*禁用样式*/
+.stepper .disabled {
+  color: #ccc;
+}
+
+/*复选框样式*/
+.carts-list icon {
+  margin-top: 60rpx;
+  margin-right: 20rpx;
+}
+
+/*底部按钮*/
+.carts-footer {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #eee;
+  background: white;
+}
+
+/*复选框*/
+.carts-footer icon {
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+
+/*全选字样*/
+.carts-footer text {
+  font-size: 30rpx;
+  margin-left: 8rpx;
+  line-height: 10rpx;
+}
+
+/*立即结算按钮*/
+.carts-footer .button {
+  line-height: 80rpx;
+  text-align: center;
+  width: 220rpx;
+  height: 80rpx;
+  background-color: #f60;
+  color: white;
+  font-size: 36rpx;
+  border-radius: 0;
+  border: 0;
+}
+
+.carts-footer-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.carts-footer-left text {
+  margin-top: 20rpx;
+}
+
+.text-price {
+  font-size: 27rpx;
+  color: #999;
+  background-size: 160% 100%;
+  text-decoration-line: line-through;
+}
+
+.text-red {
+  font-size: 27rpx;
+  color: orangered;
+}
+
+.image-delete {
+  width: 32px;
+  height: 32px;
+}

@@ -1,0 +1,25 @@
+
+<view class='order-item' wx:for='{{list}}' wx:key='{{item.id}}'>
+
+  <view class='carts-item'>
+    <view   bindtap='showDetail' data-goods-id="{{item.object_id}}">
+      <!-- 图片 -->
+      <image src='{{item.description}}' class='carts-image' mode='aspectFill'></image>
+    </view>
+
+    <view class='carts-text'>
+      <!-- 标题 -->
+      <text class='carts-title'   bindtap='showDetail' data-goods-id="{{item.object_id}}">{{item.title}}</text>
+      <!-- 价格 -->
+      <view class='carts-subtitle'>
+        <text>￥{{item.price}}</text>
+      </view>
+      <!-- 删除按钮 -->
+      <view class='order-footer'>
+        <image src='/images/delete.png' class='image-delete' bindtap='onListItemLongPress' data-id='{{item.id}}'></image>
+      </view>
+    </view>
+  </view>
+
+</view>
+

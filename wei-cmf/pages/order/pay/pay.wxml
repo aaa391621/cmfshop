@@ -1,0 +1,14 @@
+<!--pages/order/pay/pay.wxml-->
+<view class='view-title'>
+  <image src='/images/check.png'></image>
+  <text>订单提交成功</text>
+</view>
+
+<view class='class-line'></view>
+
+<view class='view-orderinfo'>
+  <text>请24小时内完成支付，谢谢！</text>
+  <text>订单号：{{order.order_sn}}</text>
+  <text>支付金额：{{order.amount}}</text>
+  <button type='primary' bindtap='pay'>微信支付</button>
+</view>

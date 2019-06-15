@@ -1,0 +1,423 @@
+/* pages/order/submit/submit.wxss */
+.view-address {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 150rpx;
+  background: #3aa0b7;
+}
+
+.view-addressleft {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx 0 0 3;
+  justify-content: flex-start;
+  align-items: center;
+  width: 450rpx;
+}
+
+.view-addressleft image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.view-addressleft-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10rpx;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 85rpx;
+}
+
+.text-name {
+  font-size: 29rpx;
+  color: #fff;
+}
+
+.text-address {
+  font-size: 29rpx;
+  color: #fff;
+}
+
+.view-addressright {
+  height: 50rpx;
+  margin-right: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.text-mobile {
+  font-size: 29rpx;
+  color: #fff;
+}
+
+.view-addressright image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 15rpx;
+}
+
+.view-title {
+  display: flex;
+  flex-direction: row;
+  height: 75rpx;
+  align-items: center;
+}
+
+.view-title image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.view-title text {
+  font-size: 29rpx;
+  color: black;
+}
+
+/*外部容器*/
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/*整体列表*/
+
+.carts-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0 40rpx;
+}
+
+/*每行单元格*/
+
+.carts-item {
+  display: flex;
+  flex-direction: row;
+  height: 150rpx;
+  /*width属性解决标题文字太短而缩略图偏移*/
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  padding: 30rpx 0;
+  justify-content: space-between;
+}
+
+/*左部图片*/
+
+.carts-image {
+  width: 130rpx;
+  height: 150rpx;
+}
+
+/*右部描述*/
+
+.carts-text {
+  margin-left: 10rpx;
+  width: 370rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.carts-right {
+  height: 100%;
+  width: 160rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*右上部分标题*/
+
+.carts-title {
+  font-size: 27rpx;
+  color: #444;
+  line-height: 38rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.carts-key-name {
+  margin-top: 10rpx;
+  font-size: 27rpx;
+  color: #999;
+}
+
+/*右下部分价格与数量*/
+
+.carts-subtitle {
+  font-size: 25rpx;
+  color: darkgray;
+  padding: 0 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*价格*/
+
+.carts-price {
+  color: #f60;
+  font-size: 14px;
+  line-height: 22px;
+  margin-top: 12rpx;
+}
+
+/*商品加减按钮*/
+
+/*stepper容器*/
+
+.stepper {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 80px;
+  height: 26px;
+  margin: 0 auto;
+}
+
+/*加号与减号*/
+
+.stepper text {
+  width: 19px;
+  line-height: 26px;
+  text-align: center;
+  float: left;
+}
+
+/*数值*/
+
+.stepper input {
+  color: black;
+  float: left;
+  margin: 0 auto;
+  width: 40px;
+  height: 26px;
+  text-align: center;
+  font-size: 12px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+/*普通样式*/
+
+.stepper .normal {
+  color: black;
+}
+
+/*禁用样式*/
+
+.stepper .disabled {
+  color: #ccc;
+}
+
+/*复选框样式*/
+
+.carts-list icon {
+  margin-top: 60rpx;
+  margin-right: 20rpx;
+}
+
+/*底部按钮*/
+
+.carts-footer {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #eee;
+  background: white;
+}
+
+/*复选框*/
+
+.carts-footer icon {
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+
+/*全选字样*/
+
+.carts-footer text {
+  font-size: 30rpx;
+  margin-left: 8rpx;
+  line-height: 10rpx;
+}
+
+/*立即结算按钮*/
+
+.carts-footer .button {
+  line-height: 80rpx;
+  text-align: center;
+  width: 220rpx;
+  height: 80rpx;
+  background-color: #f60;
+  color: white;
+  font-size: 36rpx;
+  border-radius: 0;
+  border: 0;
+}
+
+.carts-footer-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.carts-footer-left text {
+  margin-top: 20rpx;
+}
+
+.text-price {
+  font-size: 30rpx;
+  color: #999;
+}
+
+.text-red {
+  font-size: 32rpx;
+  color: orangered;
+}
+
+.image-delete {
+  width: 50rpx;
+  height: 60rpx;
+}
+
+.class-line {
+  width: 750rpx;
+  height: 20rpx;
+  background: #f4f4f4;
+}
+
+.view-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.view-price1 {
+  margin-top: 30rpx;
+  margin-right: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.text-price1 {
+  font-size: 29rpx;
+  color: grey;
+}
+
+.text-save {
+  width: 680rpx;
+  align-self: center;
+  font-size: 32rpx;
+  margin-top: 30rpx;
+  color: #fff;
+  text-align: center;
+  height: 70rpx;
+  border-radius: 9rpx;
+  background: orange;
+  line-height: 70rpx;
+  margin-bottom: 40rpx;
+}
+
+.parent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.view-freemoney {
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.text-hint {
+  font-size: 28rpx;
+  color: #000;
+  margin-left: 40rpx;
+}
+
+.text-hint1 {
+  font-size: 28rpx;
+  color: #000;
+  margin-left: 20rpx;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.input-money {
+  font-size: 26rpx;
+  color: #999;
+  margin-left: 6rpx;
+  border-style: solid;
+  border-width: 1rpx;
+  padding-left: 15rpx;
+  width: 140rpx;
+}
+
+.btn-use {
+  line-height: 55rpx;
+  background: red;
+  color: #fff;
+  text-align: center;
+  font-size: 28rpx;
+  padding-left: 10rpx;
+  margin-left: 5rpx;
+  padding-right: 10rpx;
+}
+
+.radio-style {
+  font-size: 28rpx;
+  color: red;
+  margin-left: 40rpx;
+}
+
+.text-redhint {
+  font-size: 28rpx;
+  color: red;
+}
+
+.text-select {
+  font-size: 28rpx;
+  color: #999;
+  width: 200rpx;
+  height: 40rpx;
+  line-height: 28rpx;
+}
+
+.view-picker {
+  border-style: solid;
+  border-color: #999;
+  padding-left: 20rpx;
+  display: flex;
+  flex: row;
+  height: 60rpx;
+  justify-content: flex-start;
+  align-items: center;
+  width: 200rpx;
+  border-width: 1rpx;
+  font-size: 28rpx;
+  color: #999;
+}

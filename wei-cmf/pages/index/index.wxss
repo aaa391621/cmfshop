@@ -1,0 +1,204 @@
+/**index.wxss**/
+.swiper-image {
+  width: 750rpx;
+  height: 350rpx;
+}
+
+.view_search {
+  width: 100%;
+  height: 125rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.view_searchbg {
+  width: 86%;
+  height: 70rpx;
+  border-style: solid;
+  border-width: 2rpx;
+  border-radius: 15rpx;
+  border-color: #cdcdcd;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input_search {
+  flex-grow: 2;
+  font: 29rpx;
+  color: #cdcdcd;
+  font-size: 80%;
+}
+
+.input_search {
+  font: 14px;
+  color: #999;
+  margin-left: 25rpx;
+}
+
+.search_btn {
+  height: 100%;
+  width: 85rpx;
+  flex: row;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.search_btn image {
+  height: 45rpx;
+  width: 45rpx;
+}
+
+.line {
+  height: 100%;
+  width: 2rpx;
+  background: #cdcdcd;
+}
+
+/*功能区*/
+
+.func-area {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0;
+  padding-top: 10rpx;
+  background: white;
+}
+
+.func-area view {
+  width: 25%;
+  text-align: center;
+}
+
+.func-area text {
+  display: block;
+  color: #6c6c6c;
+  font-size: 30rpx;
+  line-height: 50rpx;
+}
+
+.func-area image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.container-class {
+  display: flex;
+  flex-direction: column;
+}
+
+/*主商品区*/
+
+.container-goods {
+  background: white;
+  margin-top: 20rpx;
+}
+
+.category_title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.redline {
+  height: 80rpx;
+  width: 10rpx;
+  background-color: red;
+}
+
+.container-goods .caption {
+  font-size: 32rpx;
+  width: 100%;
+  line-height: 60rpx;
+  text-indent: 20rpx;
+  padding: 10rpx;
+}
+
+.main-goods {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-top: 1px solid #eee;
+}
+
+.main-goods .single-goods {
+  width: 50%;
+}
+
+.main-goods image {
+  width: 220rpx;
+  height: 220rpx;
+  display: block;
+  margin: 20rpx auto;
+}
+
+.main-goods .title {
+  color: #999;
+  font-size: 26rpx;
+  margin: 10rpx 6rpx 10rpx 20rpx;
+  line-height: 28rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp:1;
+  -webkit-box-orient:vertical;
+  text-align: center
+}
+
+.main-goods .summary {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.main-goods .summary text {
+  font-size: 28rpx;
+  margin: 10rpx 20rpx;
+}
+
+.main-goods .summary .price {
+  color: red;
+}
+
+.main-goods .summary .sale {
+  color: gray;
+}
+
+.view-ad {
+  margin-top: 30rpx;
+  height: 400rpx;
+  display: flex;
+}
+
+.ad-hot {
+  width: 100%;
+  height: 250rpx;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ad-hot image {
+  width: 373rpx;
+  height: 250rpx;
+}
+
+.header-right {
+  width: 373rpx;
+  height: 396rpx;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+
+.header-right image {
+  width: 373rpx;
+  height: 196rpx;
+}

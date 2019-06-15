@@ -1,0 +1,32 @@
+<!--pages/address/list/list.wxml-->
+<view class='address-list'>
+  <view class='item' wx:for='{{address}}' wx:key='{{item.id}}'>
+    <view class='header'>
+      <text class='realname' style='width:100px'>{{item.consignee}}</text>
+      <text class='mobile' style='margin-left:40rpx'>手机：{{item.mobile}}</text>
+    </view>
+
+    <view class='summary'>{{item.address}}</view>
+
+    <view class='footer'>
+      <!-- 默认地址 -->
+      <view class='set-default' bindtap='setDefault' data-id='{{item.id}}'>
+        <icon type="{{item.is_default == 1 ? 'success_circle' : 'circle'}}"></icon>
+        <text>默认地址</text>
+      </view>
+      <!-- 编辑和删除操作 -->
+      <view class='operation'>
+        <view class='set-default' bindtap='editAddress' data-id='{{item.id}}'>
+          <image src='/images/icon_edit.png'></image>
+          <text>编辑</text>
+        </view>
+        <view class='set-default' bindtap='deleteAddress' data-id='{{item.id}}'>
+          <image src='/images/icon_delete.png'></image>
+          <text>删除</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<button class='address-add' bindtap='addAddress'>添加</button>

@@ -1,0 +1,41 @@
+<view>
+  <view class='userinfo'>
+    <image class='userinfo-avatar' src="{{user.avatar}}"></image>
+    <text class='userinfo-nickname'>{{user.user_nickname}}</text>
+  </view>
+  <view class='order-area'>
+    <view bindtap='orderList' class='order'>
+      <image src='/images/dfk.png'></image>
+      <text>待付款</text>
+    </view>
+    <view bindtap='orderList' class='order'>
+      <image src='/images/dfh.png'></image>
+      <text>待发货</text>
+    </view>
+    <view bindtap='orderList' class='order'>
+      <image src='/images/ywc.png'></image>
+      <text>已完成</text>
+    </view>
+  </view>
+  <navigator url="/pages/my/money/money" class='tableviewcell'>
+    <image src='/images/icon_shopping.png'></image>
+    <text>我的钱包</text>
+  </navigator>
+  <navigator url="/pages/order/list/list" class='tableviewcell'>
+    <image src='/images/icon_orders.png'></image>
+    <text>全部订单</text>
+  </navigator>
+  <navigator url="/pages/favorite/index" class='tableviewcell'>
+    <image src='/images/icon_ssc.png'></image>
+    <text>我的收藏</text>
+  </navigator>
+  <navigator url="/pages/address/list/list" class='tableviewcell'>
+    <image src='/images/icon_seller.png'></image>
+    <text>地址管理</text>
+  </navigator>
+  <navigator url="/pages/about/update" class='tableviewcell'>
+    <image src='/images/icon_membericon.png'></image>
+    <text>关于我们</text>
+  </navigator>
+
+</view>

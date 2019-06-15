@@ -1,0 +1,5 @@
+@import "hr/index.wxss";
+@import "fontawesome/wxss/font-awesome.wxss";
+@import "image/index.wxss";
+@import "layout/margin.wxss";
+@import "utilities/text.wxss";

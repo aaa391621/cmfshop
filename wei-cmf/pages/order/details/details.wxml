@@ -1,0 +1,47 @@
+<!--pages/order/details/details.wxml-->
+<view class='parent'>
+
+  <view class='view-order'>
+    <view class='view-orderstatus'>
+      <image src='/images/oorder.png'></image>
+      <view class='view-orderstatus-info'>
+        <text class='text-name'>订单状态：{{order.order_status}}</text>
+        <text class='text-address'>订单号：{{order.order_sn}}</text>
+        <text class='text-address'>订单金额：￥{{order.amount}}元</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='view-address' style='background:#fff'>
+    <view class='view-addressleft'>
+      <image src='/images/icon_address.png'></image>
+      <view class='view-addressleft-info'>
+        <text class='text-name'>收货人：{{order.consignee}}</text>
+        <text class='text-address'>收货地址：{{order.address}}</text>
+      </view>
+    </view>
+
+    <view class='view-addressright'>
+      <text class='text-mobile'>{{order.mobile}}</text>
+    </view>
+  </view>
+
+  <view class='container carts-list'>
+    <view wx:for='{{order.goods}}' wx:key='{{order.goods.id}}' class='carts-item'>
+      <!-- 商品图片 -->
+      <view>
+        <image class='carts-image' src='{{item.thumbnail}}' mode='aspectFill'></image>
+      </view>
+      <!-- 商品标题 -->
+      <view class='carts-text'>
+        <text class='carts-title'>{{item.post_title}}</text>
+      </view>
+      <!-- 价格和数量 -->
+      <view class='carts-right'>
+        <text class='text-red'>￥{{item.price}}</text>
+        <text class='text-price'>x{{item.num}}</text>
+      </view>
+    </view>
+  </view>
+
+</view>

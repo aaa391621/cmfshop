@@ -1,0 +1,57 @@
+<!--pages/order/list/list.wxml-->
+<view class='class-tab'>
+  <text bindtap='tabClick' data-index='0' class='{{tabClasss[0]}}'>全部</text>
+  <text bindtap='tabClick' data-index='1' class='{{tabClasss[1]}}'>待付款</text>
+  <text bindtap='tabClick' data-index='2' class='{{tabClasss[2]}}'>待发货</text>
+  <text bindtap='tabClick' data-index='3' class='{{tabClasss[3]}}'>待收货</text>
+  <text bindtap='tabClick' data-index='4' class='{{tabClasss[4]}}'>已完成</text>
+</view>
+
+<view class='order-item' wx:for='{{orders}}' wx:key='{{item.id}}'>
+
+  <!-- 订单号 -->
+  <view class='view-title'>
+    <image src='/images/order_icon.png'></image>
+    <text>订单号：{{item.order_sn}}</text>
+  </view>
+
+  <!-- 商品图片和标题 -->
+  <view class='carts-item' bindtap='details' data-id='{{item.id}}'>
+    <view>
+      <image class='carts-image' src='{{item.thumbnail}}' mode='aspectFill'></image>
+    </view>
+    <view class='carts-text'>
+      <text class='carts-title'>{{item.post_title}}</text>
+    </view>
+  </view>
+
+  <!-- 总金额 -->
+  <view class='order-footer'>
+    <text>总金额：</text>
+    <text style='color:red'>￥{{item.amount}}元</text>
+  </view>
+
+  <!-- 根据不同状态显示相应操作按钮 -->
+  <view wx:if='{{item.order_status == 1}}' class='order-footer'>
+    <text bindtap='cancel' data-id='{{item.id}}' class='btn-cancel'>取消订单</text>
+    <text bindtap='pay' data-index='{{index}}' class='btn-pay'>立即付款</text>
+  </view>
+
+  <view wx:elif='{{item.order_status == 2}}' class='order-footer'>
+    <text bindtap='details' data-id='{{item.id}}' class='btn-pay'>查看订单</text>
+  </view>
+
+  <view wx:elif='{{item.order_status == 3}}' class='order-footer'>
+    <text class='btn-cancel'>待发货</text>
+  </view>
+
+  <view wx:elif='{{item.order_status == 4}}' class='order-footer'>
+    <text bindtap='confirm' data-id='{{item.id}}' class='btn-pay'>确认收货</text>
+    <text bindtap='details' data-id='{{item.id}}' class='btn-pay'>查看订单</text>
+  </view>
+
+  <view wx:else class='order-footer'>
+    <text class='btn-cancel'>已取消订单</text>
+  </view>
+
+</view>

@@ -1,0 +1,24 @@
+<!--pages/goods/list/list.wxml-->
+<view wx:if="{{!empty}}" class='goodsList carts-list'>
+  <!-- 查询到相关商品 -->
+  <view wx:for="{{goods}}" wx:key="{{item.id}}" class='carts-item' bindtap='showDetail' data-id="{{item.id}}">
+    <view>
+      <!-- 缩略图 -->
+      <image class='carts-image' src='{{domain}}uploads/{{item.img}}' mode='aspectFill'></image>
+    </view>
+    <view class='carts-text'>
+      <!-- 标题 -->
+      <text class='carts-title'>{{item.name}}</text>
+      <!-- 价格 -->
+      <text class='carts-price'>￥{{item.price}}元</text>
+      <!-- 库存与浏览量 -->
+      <view class='goods-score'>
+        <text>库存：{{item.store}}</text>
+        <text>浏览：{{item.views}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:else class='view-empty'>
+  <text>暂时没有相关商品，换个筛选条件试试吧!</text>
+</view>

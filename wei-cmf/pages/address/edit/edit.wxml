@@ -1,0 +1,24 @@
+<!--pages/address/edit/edit.wxml-->
+<view class='parent'>
+
+  <view class='view-row'>
+    <text>收货人姓名</text>
+    <input bindinput='nameChange' placeholder-class='input-placeholder' placeholder='请输入姓名' value='{{consignee}}'></input>
+  </view>
+  <view class='class-line'></view>
+
+  <view class='view-row'>
+    <text>地址</text>
+    <input bindinput='addressChange' placeholder-class='input-placeholder' placeholder='请输入地址' value='{{address}}'></input>
+  </view>
+  <view class='class-line'></view>
+
+  <view class='view-row'>
+    <text>手机号</text>
+    <input bindinput='mobileChange' placeholder-class='input-placeholder' placeholder='请输入手机号' value='{{mobile}}'></input>
+  </view>
+  <view class='class-line'></view>
+
+  <text bindtap='submit' class='text-save'>编辑地址</text>
+
+</view>

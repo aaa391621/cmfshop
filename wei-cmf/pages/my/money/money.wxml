@@ -1,0 +1,8 @@
+<!--pages/member/money/money.wxml-->
+<view class='view-head'>
+  <view class='view-moneyinfo'>
+    <text class='text-money-prefix'>账户余额</text>
+    <text class='text-money'>￥{{user.coin}}</text>
+    <text class='text-money' style='margin-bottom:6rpx'>元</text>
+  </view>
+</view>

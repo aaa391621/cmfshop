@@ -1,0 +1,57 @@
+/* pages/address/add/add.wxss */
+page {
+  position: relative;
+  height: 100%;
+}
+
+.parent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.view-row {
+  display: flex;
+  flex-direction: row;
+  width: 725rpx;
+  height: 80rpx;
+  margin-left: 25rpx;
+  align-items: center;
+}
+
+.view-row text {
+  font-size: 30rpx;
+  color: #666;
+  margin-left: 0rpx;
+  width: 230rpx;
+}
+
+.view-row input {
+  font-size: 30rpx;
+  color: #666;
+}
+
+.input-placeholder {
+  color: gray;
+  margin-left: 0rpx;
+  width: 400rpx;
+}
+
+.text-save {
+  width: 680rpx;
+  align-self: center;
+  font-size: 32rpx;
+  margin-top: 30rpx;
+  color: #fff;
+  text-align: center;
+  height: 70rpx;
+  border-radius: 9rpx;
+  background: #3aa0b7;
+  line-height: 70rpx;
+}
+
+.class-line {
+  width: 100%;
+  height: 2rpx;
+  background: #f4f4f4;
+}

@@ -1,0 +1,43 @@
+/* pages/order/payment/payment.wxss */
+.view-title {
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  padding-left: 40rpx;
+  align-items: center;
+}
+
+.view-title image {
+  width: 56rpx;
+  height: 56rpx;
+}
+
+.view-title text {
+  font-size: 34rpx;
+  margin-left: 26rpx;
+  color: #9ebf6b;
+}
+
+.class-line {
+  width: 750rpx;
+  height: 2rpx;
+  background: #f4f4f4;
+}
+
+.view-orderinfo {
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx;
+  align-items: flex-start;
+}
+
+.view-orderinfo text {
+  font-size: 30rpx;
+  margin-top: 36rpx;
+  color: dimgray;
+}
+
+.view-orderinfo button {
+  margin-top: 40rpx;
+  width: 700rpx;
+}

@@ -1,0 +1,34 @@
+<!--pages/search/search.wxml-->
+
+<view class='parent'>
+  <text class='text-title'>宝贝</text>
+  <view class='view_search'>
+    <view class='view_searchbg'>
+      <input placeholder-style='color:#999' class='input_search' bindinput='inputing' bindconfirm='searchGoods' placeholder='请输入关键词' value='{{keywords}}'></input>
+    </view>
+  </view>
+</view>
+  
+<view wx:if="{{!empty}}" class='goodsList carts-list'>
+  <!-- 查询到相关商品 -->
+  <view wx:for="{{goods}}" wx:key="{{item.id}}" class='carts-item' bindtap='showDetail' data-id="{{item.id}}">
+    <view>
+      <!-- 缩略图 -->
+      <image class='carts-image' src='{{item.more.thumbnail}}' mode='aspectFill'></image>
+    </view>
+    <view class='carts-text'>
+      <!-- 标题 -->
+      <text class='carts-title'>{{item.post_title}}</text>
+      <!-- 价格 -->
+      <text class='carts-price'>￥{{item.post_price}}元</text>
+      <!-- 库存与浏览量 -->
+      <view class='goods-score'>
+        <text>库存：{{item.post_store}}</text>
+        <text>浏览：{{item.post_hits}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:else class='view-empty'>
+  <text>暂时没有相关商品，换个筛选条件试试吧!</text>
+</view>

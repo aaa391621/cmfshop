@@ -1,0 +1,86 @@
+/* pages/category/category.wxss */
+/*总体布局为左右两列*/
+.container {
+	display: flex;
+	flex-direction: row;
+}
+
+/*侧边栏顶级分类固定宽度*/
+.sidebar {
+	width: 240rpx;
+	border-top: 1px solid #e5e5e5;
+	height: 610px;
+}
+
+/*text块状布局占一行*/
+.sidebar text {
+	display: block;
+	border: 1px solid #e5e5e5;
+	border-top: 0;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #232626;
+	font-size: 14px;
+	background-color: #fff;
+}
+
+/*hight light*/
+.sidebar text.highlight {
+	background-color: #f3f5f7;
+	color: #ffbb12;
+	border-right: 0;
+}
+
+.main {
+	width: 100%;
+	margin-left: 50rpx;
+	height: 630px;
+}
+
+
+/*网格布局子类九宫格分布*/
+.gridview {
+	background-color: #ffffff;
+	height: 100%;
+}
+
+/*向左流动*/
+.gridview dl {
+  float: left;
+  width: 50%;
+  margin-bottom: 15px
+}
+
+.main-goods {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-top: 1px solid #eee;
+}
+
+.main-goods .single-goods {
+  width: 50%;
+}
+
+.main-goods image {
+  width: 220rpx;
+  height: 220rpx;
+  display: block;
+  margin: 20rpx auto;
+}
+
+.main-goods .title {
+  color: #999;
+  font-size: 26rpx;
+  text-align: center;
+  margin: 10rpx 6rpx 10rpx 20rpx;
+  line-height: 28rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp:1;
+  -webkit-box-orient:vertical;
+
+}

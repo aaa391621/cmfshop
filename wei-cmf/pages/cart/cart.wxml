@@ -1,0 +1,60 @@
+<!--pages/cart/cart.wxml-->
+<view wx:if="{{empty}}" class='view-empty'>
+  <image src='/images/empty_cart.png'></image>
+  <text class='hint'>购物车空空如也</text>
+  <text class='btn' bindtap='see'>马上逛逛</text>
+</view>
+<view wx:else>
+  <scroll-view scroll-y>
+    <view wx:for="{{carts}}" wx:key="{{item.id}}" class='container carts-list'>
+      <view class='carts-item'>
+      
+      <!-- 复选框 -->
+      <icon wx:if="{{item.selected == 1}}" type='success_circle' size="20" bindtap='selectBox' data-index='{{index}}'></icon>
+      <icon wx:else type='circle' size="20" bindtap='selectBox' data-index='{{index}}'></icon>
+
+      <!-- 缩略图 -->
+      <view>
+        <image class='carts-image' src="{{item.image}}" mode='aspectFill'></image>
+      </view>
+
+      <view class='carts-text'>
+        <!-- 商品标题 -->
+        <text class='carts-title' bindtap='showDetail' data-goods-id="{{item.gid}}">{{item.name}}</text>
+        <!-- 数量 -->
+        <view class='carts-subtitle'>
+          <view>
+            <view class='stepper'>
+              <!-- 减 -->
+              <text class='normal' bindtap='bindMinus' data-index='{{index}}'>-</text>
+              <!-- 值 -->
+              <input type='number' bindinput='inputing' data-index='{{index}}' value='{{item.num}}'></input>
+              <!-- 加 -->
+              <text class='normal' bindtap='bindPlus' data-index='{{index}}'>+</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 价格及删除图标 -->
+      <view class='carts-right'>
+        <text class='text-red'>￥{{item.price}}</text>
+        <image bindtap='deleteCart' data-index='{{index}}' class='image-delete' src='/images/delete.png'></image>
+      </view>
+      
+      </view>
+    </view>
+    <view style='width:100%;height:100rpx'></view>
+  </scroll-view>
+
+  <view class='carts-footer'>
+    <view class='carts-footer-left' bindtap='selectAll'>
+      <icon wx:if="{{selectAllStatus}}" type='success_circle' size="20"></icon>
+      <icon wx:else type='circle' size="20"></icon>
+      <text>全选</text>
+      <text style='color:red'>￥：{{total}}（免运费）</text>
+    </view>
+    <view class='button' bindtap='userPay'>立即结算</view>
+  </view>
+
+</view>

@@ -1,0 +1,10 @@
+<view>
+    <view class="page__bd">
+        <view class="logo-wrap">
+            <view class="version-text">
+                v1.0.0
+            </view>
+        </view>
+
+    </view>
+</view>

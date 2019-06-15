@@ -1,0 +1,71 @@
+<!--pages/goods/detail/detail.wxml-->
+<import src="/wxParse/wxParse.wxml"/>
+
+<view class='class-tab'>
+  <text bindtap='tabClick' data-index="0" class='{{tabClass[0]}}'>商品</text>
+  <text bindtap='tabClick' data-index="1" class='{{tabClass[1]}}'>详情</text>
+</view>
+
+<view class='parent' wx:if="{{tab == 0}}">
+  <!-- 幻灯片 -->
+  <swiper class='images' indicator-dots autoplay interval="5000" duration="1000" style='height:{{swiperHeight}}px'>
+    <block wx:for="{{images}}" wx:key="{{item.id}}">
+      <swiper-item>
+        <image src="{{item.url}}" class="swiper-image" mode='aspectFill' />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class='view-class-title'>
+    <view class='summary'>
+      <text class='title'>{{goodsInfo.post_title}}</text>    
+    </view>
+  </view>
+
+  <view class='view-price'>
+    <text class='text-red'>￥{{goodsInfo.post_price}}元</text>
+  </view>
+  <view class='view-other-info'>
+    <text>库存：{{goodsInfo.post_store}}</text>
+    <text>浏览：{{goodsInfo.post_hits}}</text>
+  </view>
+
+  <text class='text-prop'>购买数量</text>
+  <view class='rowline'></view>
+
+  <view>
+    <view class='stepper'>
+      <!-- 减 -->
+      <text class='normal' bindtap='bindMinus'>-</text>
+      <!-- 值 -->
+      <input type='number' bindinput='inputing' value='{{goodsNum}}'></input>
+      <!-- 加 -->
+      <text class='normal' bindtap='bindPlus'>+</text>
+    </view>
+  </view>
+
+  <view style='height:160rpx'></view>
+
+</view>
+<view class='parent' wx:if="{{tab == 1}}">
+  <text class='text-desc-title'>商品信息</text>
+  <view class='rowline'></view>
+  <view class='pic'>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+</view>
+
+<view class='footer'>
+  <view class='kf'>
+    <contact-button class='kf-image' type='default-dark' session-from='weapp'></contact-button>
+    <text class='kf-text'>客服</text>
+  </view>
+  <view class='favor' bindtap='addCollect' data-id='{{goodsInfo.id}}'>
+    <image src='/images/favorite.png' class='favor-image'></image>
+    <text class='favor-text'>收藏</text>
+  </view>
+  <!-- 加入购物车 -->
+  <button class='add-cart' bindtap='addCart'>加入购物车</button>
+  <!-- 立即购买 -->
+  <button class='btn-buy' bindtap='buy'>立即购买</button>
+</view>

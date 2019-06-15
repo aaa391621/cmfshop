@@ -1,0 +1,63 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/my/money/money",
+    "pages/favorite/index",
+    "pages/login/login",
+    "pages/category/category",
+    "pages/search/search",
+    "pages/goods/detail/detail",
+    "pages/cart/cart",
+    "pages/about/update",
+    "pages/address/list/list",
+    "pages/address/add/add",
+    "pages/address/edit/edit",
+    "pages/order/submit/submit",
+    "pages/order/payment/payment",
+    "pages/order/result/result",
+    "pages/order/details/details",
+    "pages/order/list/list",
+    "pages/order/pay/pay"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "shopcmf",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#ffbb12",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "images/icons/home.png",
+        "selectedIconPath": "images/icons/home_selected.png"
+      },
+      {
+        "text": "分类",
+        "pagePath": "pages/category/category",
+        "iconPath": "images/icons/fenlei.png",
+        "selectedIconPath": "images/icons/fenlei_selected.png"
+      },
+      {
+        "text": "购物车",
+        "pagePath": "pages/cart/cart",
+        "iconPath": "images/icons/gwc.png",
+        "selectedIconPath": "images/icons/gwc_selected.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/my/my",
+        "iconPath": "images/icons/my.png",
+        "selectedIconPath": "images/icons/my_selected.png"
+      }
+    ]
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}
